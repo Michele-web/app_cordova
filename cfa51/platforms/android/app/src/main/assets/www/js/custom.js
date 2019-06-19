@@ -47,8 +47,8 @@ function onBackPress() {
 
 // toolbar persistence
 $(document).ready(function(){
-    $("[data-role='header'],[data-role='footer']").toolbar();
-    $("#panelMenu").panel();
+//    $("[data-role='header'],[data-role='footer']").toolbar();
+//    $("#panelMenu").panel();
     
     if(localStorage.getItem('href')!= null){
     	var href = localStorage.getItem('href');
@@ -81,13 +81,13 @@ $(document).on('click','#prenota',function(){
 
 
 $(document).on('click','#submitButton',function(){
-	var activePage = $(':mobile-pagecontainer').pagecontainer('getActivePage');
-            if($('#email').val().length > 0 && $('#password').val().length > 0){
+//	var activePage = $(':mobile-pagecontainer').pagecontainer('getActivePage');
+            if($('#username').val().length > 0 && $('#password').val().length > 0){
              
 //                userHandler.username = $('#email').val();
                 localStorage.setItem('logged',true);
-                $('#login').hide();
-                $('#prenotati').show();  
+//                $('#login').hide();
+//                $('#prenotati').show();  
              
                 // Send data to server through the Ajax call
                 // action is functionality we want to call and outputJSON is our data
@@ -119,7 +119,13 @@ $(document).on('click','#submitButton',function(){
 //                    }
 //                });                  
             } else {
-            	toast("Compilare i campi richiesti");
+//            	toast("Compilare i campi richiesti");
+            	var notification = document.querySelector('.mdl-js-snackbar');
+            	var data = {
+            	  message: 'Inserire Username e Password',
+            	  timeout: 10000
+            	};
+            	notification.MaterialSnackbar.showSnackbar(data);
             }          
             return false; // cancel original event to prevent form submitting
 });
@@ -136,27 +142,27 @@ function checkSelected(value){
 
 function goHome(){
 	unselectListView();
-	 window.location.href ="contenuto.html";
+	 window.location.href ="index.html";
 }
 function unselectListView(){
 	$('a span').removeClass('clicked').removeClass('select_listview');
 }
 
 
-$(document).on('swipeleft swiperight',function(event){
-	
-	
-	
-    if ( $( ".ui-page-active" ).jqmData( "panel" ) !== "open" ) {
-            if ( event.type === "swipeleft" ) {
-                $( "#panelMenu" ).panel( "close" );
-
-            } else if ( event.type === "swiperight" ) {
-                $( "#panelMenu" ).panel( "open" );
-				
-            }
-        }
-    
-});
+//$(document).on('swipeleft swiperight',function(event){
+//	
+//	
+//	
+//    if ( $( ".ui-page-active" ).jqmData( "panel" ) !== "open" ) {
+//            if ( event.type === "swipeleft" ) {
+//                $( "#panelMenu" ).panel( "close" );
+//
+//            } else if ( event.type === "swiperight" ) {
+//                $( "#panelMenu" ).panel( "open" );
+//				
+//            }
+//        }
+//    
+//});
 
 

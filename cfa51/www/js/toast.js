@@ -3,10 +3,10 @@ function toast(message) {
 
     $toast.css({
         display: 'block', 
-        background: '#000',
+        background: '#595959',
         opacity: 0.80, 
         position: 'fixed',
-        'font-size': '13px',
+        'font-size': '10px',
         padding: '7px',
         'text-align': 'center',
         width: '270px',

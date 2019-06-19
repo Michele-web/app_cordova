@@ -1,0 +1,68 @@
+/* rgb(0, 153, 0); */
+
+html{
+	height: 100%;
+}
+body{
+	height: 95%;
+	margin: 0 auto;
+}
+
+#imageArea51{
+	margin-top: 10px;
+	text-align: center;
+	height: 30%;
+}
+#form_login{
+	height: 60%;
+}
+
+form{
+    margin-inline-start: 5%;
+    margin-inline-end: 5%;
+    height: 65%;
+}
+#content_form{
+	height: 100%;
+}
+
+.input_form_login{
+	height: 32%;
+}
+.input_form_recupera{
+	height: 64%;
+}
+.mdl-textfield{
+	width: 100% !important;
+}
+
+
+
+div#imageArea51 img{
+	height: 100%;
+}
+
+#container_toast{
+	
+}
+.centra {
+    text-align: center;
+    height: 15%;
+    
+    
+}
+.centra_link {
+    text-align: center;
+    height: 5%;
+}
+.centra_button {
+    text-align: center;
+    height: 22%;
+}
+
+.buttonApp:hover{
+	background-color: rgb(0, 153, 0) !important;
+}
+
+
+
