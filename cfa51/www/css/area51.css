@@ -140,6 +140,7 @@ li.active{
 }
 .page_content_active{
 	display: block;
+	margin-top: 10%;
 }
 
 /* CARD */
@@ -187,5 +188,14 @@ span.data_wod {
 
 .form_theme{
 	text-align: left;
+}
+
+.left_bottom{
+position: relative;
+    right: 20%;
+}
+
+.booking{
+	
 }
 

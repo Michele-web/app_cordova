@@ -1,5 +1,4 @@
 // Wait for device API libraries to load
-//
 var doubleBackToExitPressedOnce = false;
 var logged = false;
 var currentDate = null;
@@ -65,12 +64,6 @@ function mostraToast(messaggio){
 	$.snackbar({content: messaggio});
 }
 
-function logout(){
-	localStorage.removeItem('logged');
-	localStorage.removeItem('username');
-	document.location.href ="login.html";
-}
-
 
 function initialFrame(){
 	showLoading();
@@ -82,7 +75,7 @@ function initialFrame(){
 		  }, 2000);
 }
 
-function changeFrame(val){
+function routing(val){
 	var page = val[0].id;
 	 closeDrawer();
 	 showLoading();
@@ -93,11 +86,43 @@ function changeFrame(val){
 		$('div.container_'+page).addClass('page_content_active');
 		var titlePage = page.toUpperCase();
 		 $($('#titoloNavbar').html(titlePage));
+		 switch (page) {
+		case 'wod':
+			
+			break;
+		case 'prenotazioni':
+			
+			break;
+		case 'news':
+			verificaNews();
+			break;
+		case 'estetica':
+			
+			break;
+		case 'contatti':
+			
+			break;
+		case 'impostazioni':
+			
+			break;
+
+		default:
+			break;
+		}
+		 
+		 
+		 
+		 
+		 
 //			 creaCards('TITOLO',testoprova,page);
 	}, 1500);
 	
 	
 }
+
+
+
+
 function closeDrawer(){
 	$('.bmd-layout-container').removeClass('bmd-drawer-in');
 	$('.bmd-layout-backdrop').removeClass('in');
@@ -105,15 +130,6 @@ function closeDrawer(){
 
 $(document).ready(function(){
 	 $('body').bootstrapMaterialDesign();
-	
-	 var valueTheme = localStorage.getItem('theme');
-	 if(valueTheme != undefined && valueTheme!= null){
-		 setTheme(valueTheme);
-		 setCheckTheme(valueTheme);
-	 }else{
-		 setTheme('1');
-		 setCheckTheme("1");
-	 }
 	 getToday();
 	 if($('#home_page').length > 0){
 		 initialFrame();
@@ -121,11 +137,7 @@ $(document).ready(function(){
 	
 });
 
-function setCheckTheme(valueTheme){
-	var check =  $('input[type=radio].optionTheme').filter(function(){ return this.value==valueTheme}); 
-	$(check[0]).addClass('radio_check');
-	 check[0].checked = true;
-}
+
 
 function getToday(){
 	var fullDate = new Date()
@@ -146,48 +158,9 @@ $(document).on('click','.nav-link-wod-score',function(){
 $(document).on('click','.list-group-item',function(){
 	$('.list-group-item').removeClass('active');
 	$(this).addClass('active');
-	changeFrame($(this));
+	routing($(this));
 });
 
-$(document).on('click','#salva_credenziali',function(){
-	
-	var checked = $(this).attr('checked');
-	if(checked == undefined){
-		$(this).attr("checked", "checked");
-		$(this).val('on');
-	}else{
-		$(this).removeAttr("checked");
-		$(this).val('off');
-	}
-});
-
-$(document).on('click','#submitButton',function(){
-	
-            if($('#username').val().length > 0 && $('#password').val().length > 0){
-//             logica login
-            	var checked = $('#salva_credenziali').val();
-            	if(checked == 'on'){
-            		localStorage.setItem('logged',true);
-                    localStorage.setItem('username',$('#username').val());
-            	}
-            	 document.location.href ="home.html";
-            } else {
-            	mostraToast('Inserire Username e Password');
-            }          
-});
-
-$(document).on('click','#recuperaButton',function(){
-    if($('#username').val().length > 0){
-//     logica per il recupero
-//        localStorage.setItem('logged',true);
-    } else {
-    	mostraToast('Inserire Username/Email');
-    }          
-});
-
-$(document).on('click','#logout',function(){
-	logout();
-});
 
 $(document).on('click','.optionTheme',function(){
 	$('.optionTheme').removeClass('radio_check');
@@ -199,44 +172,6 @@ $(document).on('click','#scoreButton',function(event){
 });
 
 
-function darkTheme(){
-	$('body').css({'background-color':'#000'});
-	$('.bmd-layout-drawer').css({'background-color':'#000','color':'#fff'});
-	$('hr.dividi').css({'border-top':'1px solid rgba(241, 241, 241, 0.99)'});
-	$('label.bmd-label-floating').css({'color':'var(--colore_applicazione)'});
-	$('.form-control, .custom-file-control, .is-focused .form-control, .is-focused .custom-file-control').css({'background-image':'linear-gradient(to top, var(--colore_applicazione) 2px, rgba(0, 150, 136, 0) 2px), linear-gradient(to top, var(--colore_applicazione) 1px, rgba(0, 0, 0, 0) 1px)'})
-	$('.radio label, .is-focused .radio label, .radio-inline, .is-focused .radio-inline, .checkbox label, .is-focused .checkbox label, .checkbox-inline, .is-focused .checkbox-inline, .switch label, .is-focused .switch label').css({'color':'var(--colore_applicazione)'})
-	$('.check').css({'border':'0.125rem solid var(--colore_applicazione)'});
-	$('input[type=text]').css({'color':'#fff'});
-	$('input[type=password]').css({'color':'#fff'});
-	$('input[type=text].text_card').css({'color':'#000'});
-	$('input[type=password]text_card').css({'color':'#000'});
-	$('.bmd-layout-backdrop').css({'background-color':'rgba(251, 248, 248, 0.5)'});
-}
-function lightTheme(){
-	$('body').css({'background-color':''});
-	$('.bmd-layout-drawer').css({'background-color':'','color':''});
-//	$('hr.dividi').css({'border-top':'1px solid rgba(241, 241, 241, 0.99)'});
-	$('label.bmd-label-floating').css({'color':''});
-	$('.form-control, .custom-file-control, .is-focused .form-control, .is-focused .custom-file-control').css({'background-image':'linear-gradient(to top, var(--colore_applicazione) 2px, rgba(0, 150, 136, 0) 2px), linear-gradient(to top, rgba(0, 0, 0, 0.26) 1px, rgba(0, 0, 0, 0) 1px)'})
-	$('.radio label, .is-focused .radio label, .radio-inline, .is-focused .radio-inline, .checkbox label, .is-focused .checkbox label, .checkbox-inline, .is-focused .checkbox-inline, .switch label, .is-focused .switch label').css({'color':'rgba(0, 0, 0, 0.26)'})
-	$('input[type=text]').css({'color':''});
-	$('input[type=password]').css({'color':''});
-	$('.bmd-layout-backdrop').css({'background-color':'rgba(0, 0, 0, 0.5)'});
-}
-function setTheme(valueTheme){
-	if(valueTheme=='0'){
-		darkTheme();
-	}else{
-		lightTheme();
-	}
-}
-//cambio tema 
-$(document).on('click','#changeTheme',function(){
-	var valueTheme = $('.radio_check').val();
-	localStorage.setItem('theme',valueTheme);
-	setTheme(valueTheme);
-});
 
 //crea card
 function creaCards(title,body,context){
@@ -252,6 +187,11 @@ function creaCards(title,body,context){
 	$('.container_'+context).append(card).fadeIn().delay(1000);
 	
 }
+
+
+$(document).on('click','.booking',function(){
+//	alert('s');
+});
 
 
 
