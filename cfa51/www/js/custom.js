@@ -1,6 +1,12 @@
 // Wait for device API libraries to load
 //
 var doubleBackToExitPressedOnce = false;
+
+
+function hideSplash() {
+window.location.href ="contenuto.html";
+}
+
 function onLoad() {
     document.addEventListener("deviceready", onDeviceReady, false);
 }

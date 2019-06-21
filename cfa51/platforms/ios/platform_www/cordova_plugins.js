@@ -16,11 +16,20 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
         "cordova.InAppBrowser.open",
         "window.open"
       ]
+    },
+    {
+      "id": "cordova-plugin-screen-orientation.screenorientation",
+      "file": "plugins/cordova-plugin-screen-orientation/www/screenorientation.js",
+      "pluginId": "cordova-plugin-screen-orientation",
+      "clobbers": [
+        "cordova.plugins.screenorientation"
+      ]
     }
   ];
   module.exports.metadata = {
     "cordova-plugin-exit": "1.0.3",
     "cordova-plugin-inappbrowser": "3.0.0",
-    "cordova-plugin-whitelist": "1.3.3"
+    "cordova-plugin-whitelist": "1.3.3",
+    "cordova-plugin-screen-orientation": "3.0.1"
   };
 });

@@ -15,6 +15,7 @@
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
 		5619057462B949DABAFAFF2B /* exit.m in Sources */ = {isa = PBXBuildFile; fileRef = F2166C2708A34E6181114A60 /* exit.m */; };
 		FE7208E2FCBB403EA7B76C99 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B03A0752148458696D30A99 /* CDVInAppBrowser.m */; };
+		8B6DC68A1D1846F0AE9C92B3 /* CDVOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE468E2AC9D48F7B78BD2C9 /* CDVOrientation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		BBF2523401054483903DD124 /* exit.h */ = {isa = PBXFileReference; name = "exit.h"; path = "cordova-plugin-exit/exit.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		0B03A0752148458696D30A99 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; name = "CDVInAppBrowser.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		A12B921C110A4B548DAAF981 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; name = "CDVInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		9FE468E2AC9D48F7B78BD2C9 /* CDVOrientation.m */ = {isa = PBXFileReference; name = "CDVOrientation.m"; path = "cordova-plugin-screen-orientation/CDVOrientation.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		173C1B490E95418ABD8AD6DB /* CDVOrientation.h */ = {isa = PBXFileReference; name = "CDVOrientation.h"; path = "cordova-plugin-screen-orientation/CDVOrientation.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +177,8 @@
 				BBF2523401054483903DD124 /* exit.h */,
 				0B03A0752148458696D30A99 /* CDVInAppBrowser.m */,
 				A12B921C110A4B548DAAF981 /* CDVInAppBrowser.h */,
+				9FE468E2AC9D48F7B78BD2C9 /* CDVOrientation.m */,
+				173C1B490E95418ABD8AD6DB /* CDVOrientation.h */,
 			);
 			name = Plugins;
 			path = "CFA51/Plugins";
@@ -300,6 +305,7 @@
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				5619057462B949DABAFAFF2B /* exit.m in Sources */,
 				FE7208E2FCBB403EA7B76C99 /* CDVInAppBrowser.m in Sources */,
+				8B6DC68A1D1846F0AE9C92B3 /* CDVOrientation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

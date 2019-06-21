@@ -3,8 +3,16 @@
 html{
 	height: 100%;
 }
-body{
+body#login_page{
 	height: 95%;
+	margin: 0 auto;
+}
+body#recupera_page{
+	height: 95%;
+	margin: 0 auto;
+}
+body{
+	height: 100%;
 	margin: 0 auto;
 }
 
@@ -64,5 +72,120 @@ div#imageArea51 img{
 	background-color: rgb(0, 153, 0) !important;
 }
 
+#spinner{
+    position: absolute;
+    /* height: 50%; */
+    top: 50%;
+    left: 40%;
+}
+#img_loading{
+	height: 70%;
+    top: 50%;
+}
 
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+/* NAVBAR */
+
+
+hr.dividi{
+    width: 100% !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.18);
+}
+.navbar.navbar-light.bg-faded{
+	background-color: #000;
+    color: #fff;
+}
+#titoloNavbar{
+	position: relative;
+	left:0%;
+}
+#image_drawer{
+	width: 100%;
+}
+header{
+	background-color: #000;
+}
+div#news{
+	display: none;
+}
+div#estetica{
+	display: none;
+}
+.list-group-item:hover{
+	color: var(--colore_applicazione);
+}
+ul.list-group li:active{
+	background-color: #00000017;
+}
+
+li.active{
+	background-color: #00000017;
+}
+
+/* page contente */
+.page_content{
+	display: none;
+}
+.page_content_active{
+	display: block;
+}
+
+/* CARD */
+.card{
+	width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+.card-text{
+	max-height: 100px;
+    overflow-y: scroll;
+}
+
+.card-header-wod-score{
+	background-color: #8e8e8e4f !important;
+    height: 50px;
+}
+
+.nav-link-wod-score{
+	position: relative;
+    bottom: 20%;
+    height: 20px;
+}
+.nav-link-wod-score.active{
+	background-color: #fff !important;
+}
+.nav-link-wod-score:hover, .nav-link-wod-score:focus{
+	border-color: #fff0;
+}
+.card-body-wod-score{
+	display: none;
+}
+.card-body-wod-score.active{
+	display: block;
+}
+.card-text-wod-score{
+/* 	max-height: 100% !important;
+    height: 200px !important; */
+    width: 100% !important;
+}
+span.data_wod {
+    float: right;
+}
+
+.form_theme{
+	text-align: left;
+}
 

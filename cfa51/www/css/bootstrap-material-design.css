@@ -3811,8 +3811,8 @@ input[type="button"].btn-block {
   .list-group-item.active {
     z-index: 2;
     color: #fff;
-    background-color: var(--colore_applicazione);
-    border-color: var(--colore_applicazione); }
+    background-color: #00000017;
+    border-color: #00000017; }
 
 .list-group-horizontal {
   flex-direction: row; }
@@ -4593,7 +4593,39 @@ a.close.disabled {
   background-color: currentColor;
   border-radius: 50%;
   opacity: 0;
-  animation: spinner-grow .75s linear infinite; }
+  animation: spinner-grow .70s linear infinite; }
+  
+  @keyframes spinner-grow1 {
+  0% {
+    transform: scale(0); }
+  50% {
+    opacity: 1; } }
+
+.spinner-grow1 {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+  background-color: currentColor;
+  border-radius: 50%;
+  opacity: 0;
+  animation: spinner-grow1 .85s linear infinite; }
+  
+  @keyframes spinner-grow2 {
+  0% {
+    transform: scale(0); }
+  50% {
+    opacity: 1; } }
+
+.spinner-grow2 {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+  background-color: currentColor;
+  border-radius: 50%;
+  opacity: 0;
+  animation: spinner-grow2 1s linear infinite; }
 
 .spinner-grow-sm {
   width: 1rem;
